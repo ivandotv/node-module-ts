@@ -1,0 +1,90 @@
+{
+  "name": "jme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build && npm run test",
+    "build:nix": "del lib && tsc",
+    "build:watch": "del lib && tsc --watch",
+    "test": "jest --verbose --coverage --no-cache",
+    "test:watch": "jest --watch",
+    "ci:test": "jest --runInBand --reporters=default --reporters=jest-junit --coverage --coverageDirectory=coverage",
+    "format": "prettier --write \"{./src,./tests}/**/*\"",
+    "fix:src": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "fix:tests": "eslint --fix \"./tests/**/*.{js,jsx,ts,tsx}\"",
+    "fix": "npm-run-all -p fix:*",
+    "docs": "del docs/api && typedoc --theme markdown --readme none --excludePrivate --excludeNotExported --out docs/api ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivandotv/node-module-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivandotv/node-module-ts/issues"
+  },
+  "homepage": "https://github.com/ivandotv/node-module-ts#readme",
+  "keywords": [],
+  "author": "Ivan Vlatkovic",
+  "jest": {
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "jest-junit": {
+    "outputDirectory": "./reports/junit",
+    "outputName": "js-test-results.xml"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "tests/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.12",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "del-cli": "^3.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "npm-run-all": "^1.0.0",
+    "jest": "^24.9.0",
+    "jest-junit": "^8.0.0",
+    "jest-watch-typeahead": "^0.4.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "standardx": "^5.0.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3",
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-markdown": "^2.1.11"
+  },
+  "dependencies": {}
+}

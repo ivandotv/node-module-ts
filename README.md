@@ -22,7 +22,7 @@ Opinionated template repository for starting new node modules with typescript.
 - `build`: build typescript.
 - `build:watch`: build and watch typescript for changes.
 - `test`: run all tests and generate code coverage.
-- `test:watch`: run and watch tests for changes.
+- `test:watch`: run and watch tests for changes (with [typeahead](https://www.npmjs.com/package/jest-watch-typeahead) feature)
 - `ci:test` task that is executed by CI (runs tests and uploads code coverage).
 - `format`: format all files with [prettier](https://prettier.io) (`tests` and `src` directories).
 
@@ -53,5 +53,5 @@ there is one debug configuration which is set up to debug currently focused test
 Typescript documentation is generated via [typedoc](https://typedoc.org).
 Currently, it is set up to go into `docs/api` directory and it is generated in markdown so it can be displayed on Github.
 
-- Private member are excluded
+- Private members are excluded.
 - Only exported properties are documented.

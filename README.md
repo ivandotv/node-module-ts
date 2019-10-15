@@ -34,11 +34,11 @@ Since node module is a bulding block of larger applications you can easily exten
 
 ### Continous Integration
 
-[CircleCi](https://circleci.com/) is used for continous integration.
+[CircleCI](https://circleci.com/) is used for continous integration.
 
 Tests are run for node versions 8, 10 and 12.
 
-Jobs are also set up to upload code coverage to [codecov.io](https://codecov.io) however you can also use [coveralls](https://coveralls.io) for code coverage ( it's currently commented out).
+CircleCI is also set up to upload code coverage to [codecov.io](https://codecov.io) however you can also use [coveralls](https://coveralls.io) for code coverage ( it's currently commented out).
 
 ### Git Hooks
 

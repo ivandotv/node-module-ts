@@ -1,6 +1,7 @@
 # Typescript Node Module Template
 
 Opinionated template repository for starting new node modules with typescript.
+Since node module is a bulding block of larger applications you can easily extend this template repository to do much more.
 
 ## Getting Started
 

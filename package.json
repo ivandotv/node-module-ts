@@ -46,7 +46,7 @@
   },
   "jest-junit": {
     "outputDirectory": "./reports/junit",
-    "outputName": "js-test-results.xml"
+    "outputName": "test-results.xml"
   },
   "husky": {
     "hooks": {

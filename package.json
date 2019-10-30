@@ -36,6 +36,9 @@
   "keywords": [],
   "author": "Ivan Vlatkovic",
   "jest": {
+    "testMatch": [
+      "<rootDir>/tests/*.ts"
+    ],
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"

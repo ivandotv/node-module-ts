@@ -1,11 +1,15 @@
-# Typescript Node Module Template
+# TypeScript Node Module Template
 
 Opinionated template repository for starting new node modules with typescript.
-Since node module is a bulding block of larger applications you can easily extend this template repository to do much more.
 
 ## Getting Started
 
-1. Run `npx npm-check-updates` to see if any packages need upgrading or `npm outdated` from minor updates.
+You can immediately create your repo by clicking on the `Use this template` button in the Github page ui.
+Or you can use [deGit](https://github.com/Rich-Harris/degit) which is a very convenient tool to quickly download the repository `degit https://github.com/ivandotv/node-module-typescript`
+
+### Then
+
+1. Run `npm outdated` for minor updates, or you can run `npx npm-check-updates` to see if any packages need major upgrades.
 2. Run `npm install`
 
 ## What's Inside
@@ -24,17 +28,17 @@ Since node module is a bulding block of larger applications you can easily exten
 - `build:watch`: build and watch typescript for changes.
 - `test`: run all tests and generate code coverage.
 - `test:watch`: run and watch tests for changes (with [typeahead](https://www.npmjs.com/package/jest-watch-typeahead) feature)
-- `ci:test` task that is executed by CI (runs tests and uploads code coverage).
+  `ci:test` task that is executed by continuous integration provider (CircleCI) runs tests and uploads code coverage.
 - `format`: format all files with [prettier](https://prettier.io) (`tests` and `src` directories).
 
 - `fix:src`: run ESLint on `src` directory with `--fix` flag.
 - `fix:tests`: run ESLint on `tests` directory with `--fix` flag.
-- `fix`: run `fix:src` and `fix:tests` task in paralll.
+- `fix`: run `fix:src` and `fix:tests` task in parallel.
 - `docs`: generate typescript documentation via [typedoc](https://typedoc.org)
 
 ### Continous Integration
 
-[CircleCI](https://circleci.com/) is used for continous integration.
+[CircleCI](https://circleci.com/) is used for continuous integration.
 
 Tests are run for node versions 8, 10 and 12.
 

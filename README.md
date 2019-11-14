@@ -5,10 +5,10 @@ Since node module is a bulding block of larger applications you can easily exten
 
 ## Getting Started
 
-1. Run `npx npm-check-updates` to see if any packages need upgrading.
+1. Run `npx npm-check-updates` to see if any packages need upgrading or `npm outdated` from minor updates.
 2. Run `npm install`
 
-## What is Inside
+## What's Inside
 
 - Typescript is set to `strict` configuration with source map generation.
 - ESLint is set up to use [standardJS configuration](https://standardjs.com/index.html#typescript) for typescript.
@@ -42,7 +42,7 @@ CircleCI is also set up to upload code coverage to [codecov.io](https://codecov.
 
 ### Git Hooks
 
-There is one git hook setup via `husky` package in combination with `lint-staged`. Before committing the files all staged files will be run through ESLint and Prettier.
+There is one git hook setup via [husky](https://www.npmjs.com/package/husky) package in combination with [lint-staged](https://www.npmjs.com/package/lint-staged). Before committing the files all staged files will be run through ESLint and Prettier.
 
 ### Debugging
 

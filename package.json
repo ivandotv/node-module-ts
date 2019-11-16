@@ -16,6 +16,7 @@
     "prepublishOnly": "npm run build && npm run test",
     "build": "del lib && tsc",
     "build:watch": "del lib && tsc --watch",
+    "nodemon": "./node_modules/.bin/nodemon",
     "test": "jest --verbose --coverage --no-cache",
     "test:watch": "jest --watch",
     "ci:test": "jest --runInBand --reporters=default --reporters=jest-junit --coverage --coverageDirectory=coverage",

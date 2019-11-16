@@ -7,6 +7,14 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Program",
+      "program": "${workspaceFolder}/src/index.ts",
+      // "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/lib/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Current test file",
       "cwd": "${workspaceRoot}",
       "program": "${workspaceFolder}/node_modules/.bin/jest",

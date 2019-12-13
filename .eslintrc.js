@@ -18,6 +18,10 @@ module.exports = {
     'prettier/prettier': ['error'],
     'lines-between-class-members': ['error'],
     'space-before-function-paren': ['error', 'always'],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+    ],
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {

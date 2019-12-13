@@ -17,6 +17,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'error',
     'prettier/prettier': ['error'],
     'lines-between-class-members': ['error'],
+    'space-before-function-paren': ['error', 'always'],
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {

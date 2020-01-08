@@ -1,0 +1,12 @@
+module.exports = {
+  jest: {
+    testMatch: ['<rootDir>/tests/*.ts'],
+    watchPlugins: [
+      'jest-watch-typeahead/filename',
+      'jest-watch-typeahead/testname',
+    ],
+    transform: {
+      '^.+\\.tsx?$': 'ts-jest',
+    },
+  },
+}

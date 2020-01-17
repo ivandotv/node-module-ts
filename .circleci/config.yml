@@ -13,15 +13,15 @@ jobs:
       - image: circleci/node:12
     steps:
       - test
-      - store-artifacts
-      - setup-coverage
+      - store-coverage-data
+      - upload-coverage
   node-v13:
     docker:
       - image: circleci/node:13
     steps:
       - test
 commands:
-  store-artifacts:
+  store-coverage-data:
     steps:
       - store_artifacts:
           path: coverage
@@ -44,7 +44,7 @@ commands:
             npm run ci:test
       - store_test_results:
           path: reports/junit/
-  setup-coverage:
+  upload-coverage:
     steps:
       # - coveralls/upload # coveralls setup
       - codecov/upload:

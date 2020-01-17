@@ -19,7 +19,7 @@
     "nodemon": "./node_modules/.bin/nodemon",
     "test": "jest --verbose --coverage --no-cache",
     "test:watch": "jest --watch",
-    "ci:test": "jest --runInBand --reporters=default --reporters=jest-junit --coverage --coverageDirectory=coverage",
+    "ci:test": "jest --runInBand --ci --reporters=default --reporters=jest-junit --coverage --coverageDirectory=coverage",
     "format": "prettier --write \"{./src,./tests}/**/*\"",
     "fix:src": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\"",
     "fix:tests": "eslint --fix \"./tests/**/*.{js,jsx,ts,tsx}\"",

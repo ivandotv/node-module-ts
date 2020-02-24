@@ -3,28 +3,33 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "main": "lib/index.js",
-  "types": "lib/",
+  "main": "dist/src/index.js",
+  "types": "dist/types/",
   "files": [
-    "lib",
+    "dist",
     "src"
   ],
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "start": "npm run build:js:watch",
     "prepublishOnly": "npm run build && npm run test",
-    "build": "del lib && del .buildcache && tsc",
-    "build:watch": "del lib && del .buildcache && tsc --watch",
     "nodemon": "./node_modules/.bin/nodemon",
     "test": "jest --verbose --coverage --no-cache",
     "test:watch": "jest --watch",
     "ci:test": "jest --runInBand --ci --reporters=default --reporters=jest-junit --coverage --coverageDirectory=coverage",
-    "format": "prettier --write \"{./src,./tests}/**/*\"",
+    "format": "prettier-standard \"{./src,./tests}/**/*\"",
     "fix:src": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\"",
     "fix:tests": "eslint --fix \"./tests/**/*.{js,jsx,ts,tsx}\"",
     "fix": "npm-run-all -p fix:*",
-    "docs": "del docs/api && typedoc --theme markdown --readme none --excludePrivate --excludeNotExported --out docs/api ./src"
+    "docs": "del docs/api && typedoc --theme markdown --readme none --excludePrivate --excludeNotExported --out docs/api ./src",
+    "type-check": "tsc -p tsconfig.check.json",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build:ts": "del dist/types && del .buildcache && tsc -p tsconfig.build.json",
+    "build:js": " del dist/src && babel src --out-dir dist/src --ignore \"src/**/__tests__/**/*\",\"src/**/*.spec.ts\",\"src/**/*.test.ts\" --extensions \".ts,.tsx\" --source-maps",
+    "build:js:watch": "npm run build:js -- --watch",
+    "build": "npm run build:ts && npm run build:js"
   },
   "repository": {
     "type": "git",
@@ -48,11 +53,11 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier-standard"
     ],
     "tests/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier-standard"
     ]
   },
   "devDependencies": {
@@ -61,6 +66,7 @@
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
     "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.0",
@@ -71,11 +77,18 @@
     "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
+    "prettier-standard": "^16.1.0",
     "standardx": "^5.0.0",
     "ts-jest": "^24.3.0",
     "typedoc": "^0.16.8",
     "typedoc-plugin-markdown": "^2.2.16",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3"
   },
   "dependencies": {}
 }

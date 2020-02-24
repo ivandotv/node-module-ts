@@ -1,20 +1,22 @@
 module.exports = {
   env: {
-    commonjs: true,
+    // commonjs: true,
     es6: true,
     node: true,
     jest: true,
   },
-  extends: ['prettier'],
-  plugins: ['@typescript-eslint/eslint-plugin', 'prettier'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'prettier', 'standard'],
+  extends: ['prettier/standard', 'standard'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.eslint.json',
+    // project: './tsconfig.eslint.json',
     sourceType: 'module',
   },
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+    'no-useless-constructor': 'off',
+    '@typescript-eslint/no-useless-constructor': 'off',
     'prettier/prettier': ['error'],
     'lines-between-class-members': ['error'],
     'padding-line-between-statements': [

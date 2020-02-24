@@ -1,13 +1,13 @@
 module.exports = {
-  testMatch: ['<rootDir>/tests/*.ts'],
+  testMatch: [
+    '<rootDir>/src/**/__tests__/**/*.[jt]s?(x)',
+    '<rootDir>/tests/**/*.[jt]s?(x)',
+  ],
   testEnvironment: 'node',
   watchPlugins: [
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',
   ],
-  transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-  },
   coverageThreshold: {
     global: {
       branches: 80,

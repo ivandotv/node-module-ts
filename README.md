@@ -1,4 +1,6 @@
-# TypeScript Node Module Template
+# Archived
+### This repository is archived in favor of [completely new version](https://github.com/ivandotv/typescript-babeljs-jest-rollup) which uses babeljs for compiling typescript and rollup for bundling
+## TypeScript Node Module Template
 
 Opinionated template repository for starting new node modules with typescript.
 
